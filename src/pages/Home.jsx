@@ -75,17 +75,17 @@ export default function Home({ onLaunchLab }) {
       <header className="home-header">
         <div className="home-title-row">
           <span className="logo-icon animate-spin">💠</span>
-          <h1>Virtual Chem-Eng Lab</h1>
+          <h1>Virtual Material Science Lab</h1>
         </div>
-        <p className="home-subtitle">Interactive 3D Simulations for Chemistry & Materials Science</p>
+        <p className="home-subtitle">Interactive 3D Simulations for Materials Science</p>
       </header>
 
       <main className="home-dashboard">
         <h2 className="dashboard-title">Select a Virtual Laboratory</h2>
         <div className="labs-grid">
           {labs.map((lab) => (
-            <div 
-              key={lab.id} 
+            <div
+              key={lab.id}
               className={`lab-card card ${lab.active ? 'active-lab' : 'disabled-lab'}`}
               onClick={lab.active ? () => onLaunchLab(lab.id) : null}
             >
@@ -110,7 +110,7 @@ export default function Home({ onLaunchLab }) {
                 <p className="lab-desc">{lab.description}</p>
                 <div className="lab-action-row">
                   {lab.active ? (
-                    <button 
+                    <button
                       className="launch-btn"
                       onClick={(e) => {
                         e.stopPropagation();
