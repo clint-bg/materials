@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import Home from './pages/Home';
 import CrystalLab from './pages/CrystalLab';
 import DiffractionLab from './pages/DiffractionLab';
+import DefectLab from './pages/DefectLab';
+import DensityLab from './pages/DensityLab';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState('home'); // 'home' | 'crystal_lab' | 'diffraction_lab'
+  const [currentView, setCurrentView] = useState('home'); // 'home' | 'crystal_lab' | 'diffraction_lab' | 'defect_lab' | 'density_lab'
 
   return (
     <>
@@ -14,6 +16,10 @@ export default function App() {
             setCurrentView('crystal_lab');
           } else if (labId === 'diffraction_lab') {
             setCurrentView('diffraction_lab');
+          } else if (labId === 'defect_lab') {
+            setCurrentView('defect_lab');
+          } else if (labId === 'density_lab') {
+            setCurrentView('density_lab');
           }
         }} />
       )}
@@ -22,6 +28,12 @@ export default function App() {
       )}
       {currentView === 'diffraction_lab' && (
         <DiffractionLab onBack={() => setCurrentView('home')} />
+      )}
+      {currentView === 'defect_lab' && (
+        <DefectLab onBack={() => setCurrentView('home')} />
+      )}
+      {currentView === 'density_lab' && (
+        <DensityLab onBack={() => setCurrentView('home')} />
       )}
     </>
   );

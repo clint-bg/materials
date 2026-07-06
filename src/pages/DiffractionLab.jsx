@@ -381,7 +381,7 @@ export default function DiffractionLab({ onBack }) {
     }
 
     ctx.fillStyle = '#f8fafc';
-    ctx.fillText('Diffraction Angle 2\u03B8 (degrees)', paddingLeft + graphWidth / 2, h - 3);
+    ctx.fillText('Diffraction Angle 2θ (degrees)', paddingLeft + graphWidth / 2, h - 3);
 
     // Draw Diffraction Curve
     ctx.strokeStyle = '#06b6d4';
@@ -652,7 +652,7 @@ export default function DiffractionLab({ onBack }) {
 
               <div className="card" style={{ padding: '16px' }}>
                 <h3>Diffractogram Plot (XRD Pattern)</h3>
-                <p className="subtitle">Simulated intensity peak scan against 2\u03B8 diffraction.</p>
+                <p className="subtitle">Simulated intensity peak scan against 2θ diffraction.</p>
                 <div style={{ height: '180px', width: '100%', marginTop: '8px', borderRadius: '8px', overflow: 'hidden' }}>
                   <canvas ref={plotRef} width="400" height="180" style={{ width: '100%', height: '100%', display: 'block' }} />
                 </div>
@@ -813,7 +813,7 @@ export default function DiffractionLab({ onBack }) {
               {/* Show Diffractogram in Quiz (Always shown as reference, but marker represents current theta selection) */}
               <div className="card" style={{ padding: '16px' }}>
                 <h3>Diffractogram Plot (XRD Pattern)</h3>
-                <p className="subtitle">Simulated intensity peak scan against 2\u03B8 diffraction.</p>
+                <p className="subtitle">Simulated intensity peak scan against 2θ diffraction.</p>
                 <div style={{ height: '180px', width: '100%', marginTop: '8px', borderRadius: '8px', overflow: 'hidden' }}>
                   <canvas ref={plotRef} width="400" height="180" style={{ width: '100%', height: '100%', display: 'block' }} />
                 </div>

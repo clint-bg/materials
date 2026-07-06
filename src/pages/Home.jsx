@@ -1,6 +1,8 @@
 import React from 'react';
 import crystalLabPreview from '../assets/crystal_lab_preview.jpg';
 import xrdLabPreview from '../assets/xrd_lab_preview.jpg';
+import defectLabPreview from '../assets/defect_lab_preview.jpg';
+import densityLabPreview from '../assets/density_lab_preview.jpg';
 
 export default function Home({ onLaunchLab }) {
   const labs = [
@@ -29,18 +31,20 @@ export default function Home({ onLaunchLab }) {
       title: 'Lattice Defect Visualizer',
       subtitle: 'Vacancies, Interstitials & Dislocations',
       description: 'Examine common crystal lattice defects in 3D. Simulate how interstitial impurities and dislocations shift atomic bounds.',
-      active: false,
+      image: defectLabPreview,
+      active: true,
       difficulty: 'Medium',
       topic: 'Materials Science'
     },
     {
-      id: 'phase_lab',
-      title: 'Binary Phase Diagrams',
-      subtitle: 'Eutectic Systems & Lever Rule',
-      description: 'Interact with temperature-composition charts for binary alloys. Apply the lever-rule to calculate solid-liquid phase fractions.',
-      active: false,
-      difficulty: 'Medium',
-      topic: 'Thermodynamics'
+      id: 'density_lab',
+      title: 'Planar Density Lab',
+      subtitle: 'Crystal Packing & Miller Slices',
+      description: 'Slice 3D crystal systems—including NaCl (Rock Salt), ZnS (Zinc Blende), CaF₂ (Fluorite), and BaTiO₃ (Perovskite)—with arbitrary Miller planes. Analyze 2D cross-sections and calculate planar packing densities in real time.',
+      image: densityLabPreview,
+      active: true,
+      difficulty: 'Hard',
+      topic: 'Materials Crystallography'
     }
   ];
 
@@ -73,9 +77,6 @@ export default function Home({ onLaunchLab }) {
                 )}
                 <div className="lab-badges">
                   <span className="lab-badge topic-badge">{lab.topic}</span>
-                  <span className={`lab-badge diff-badge ${lab.difficulty.toLowerCase()}`}>
-                    {lab.difficulty}
-                  </span>
                 </div>
               </div>
 
@@ -87,7 +88,15 @@ export default function Home({ onLaunchLab }) {
                 <p className="lab-desc">{lab.description}</p>
                 <div className="lab-action-row">
                   {lab.active ? (
-                    <button className="launch-btn">Launch Simulator ➡️</button>
+                    <button 
+                      className="launch-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onLaunchLab(lab.id);
+                      }}
+                    >
+                      Launch Simulator ➡️
+                    </button>
                   ) : (
                     <span className="coming-soon-label">Simulation Under Construction</span>
                   )}
