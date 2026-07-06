@@ -1,5 +1,6 @@
 import React from 'react';
 import crystalLabPreview from '../assets/crystal_lab_preview.jpg';
+import xrdLabPreview from '../assets/xrd_lab_preview.jpg';
 
 export default function Home({ onLaunchLab }) {
   const labs = [
@@ -18,7 +19,8 @@ export default function Home({ onLaunchLab }) {
       title: "Bragg's Law XRD Simulator",
       subtitle: 'X-Ray Diffraction Physics',
       description: 'Simulate monochromatic wave scattering through lattice planes. Learn how path length difference creates constructive diffraction peaks.',
-      active: false,
+      image: xrdLabPreview,
+      active: true,
       difficulty: 'Hard',
       topic: 'Solid State Physics'
     },
