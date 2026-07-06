@@ -4,9 +4,11 @@ import CrystalLab from './pages/CrystalLab';
 import DiffractionLab from './pages/DiffractionLab';
 import DefectLab from './pages/DefectLab';
 import DensityLab from './pages/DensityLab';
+import PolymerLab from './pages/PolymerLab';
+import TensileLab from './pages/TensileLab';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState('home'); // 'home' | 'crystal_lab' | 'diffraction_lab' | 'defect_lab' | 'density_lab'
+  const [currentView, setCurrentView] = useState('home'); // 'home' | 'crystal_lab' | 'diffraction_lab' | 'defect_lab' | 'density_lab' | 'polymer_lab' | 'tensile_lab'
 
   return (
     <>
@@ -20,6 +22,10 @@ export default function App() {
             setCurrentView('defect_lab');
           } else if (labId === 'density_lab') {
             setCurrentView('density_lab');
+          } else if (labId === 'polymer_lab') {
+            setCurrentView('polymer_lab');
+          } else if (labId === 'tensile_lab') {
+            setCurrentView('tensile_lab');
           }
         }} />
       )}
@@ -34,6 +40,12 @@ export default function App() {
       )}
       {currentView === 'density_lab' && (
         <DensityLab onBack={() => setCurrentView('home')} />
+      )}
+      {currentView === 'polymer_lab' && (
+        <PolymerLab onBack={() => setCurrentView('home')} />
+      )}
+      {currentView === 'tensile_lab' && (
+        <TensileLab onBack={() => setCurrentView('home')} />
       )}
     </>
   );

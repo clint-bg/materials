@@ -3,6 +3,8 @@ import crystalLabPreview from '../assets/crystal_lab_preview.jpg';
 import xrdLabPreview from '../assets/xrd_lab_preview.jpg';
 import defectLabPreview from '../assets/defect_lab_preview.jpg';
 import densityLabPreview from '../assets/density_lab_preview.jpg';
+import polymerLabPreview from '../assets/polymer_lab_preview.jpg';
+import tensileLabPreview from '../assets/tensile_lab_preview.jpg';
 
 export default function Home({ onLaunchLab }) {
   const labs = [
@@ -45,6 +47,26 @@ export default function Home({ onLaunchLab }) {
       active: true,
       difficulty: 'Hard',
       topic: 'Materials Crystallography'
+    },
+    {
+      id: 'polymer_lab',
+      title: 'Polymer Structure Lab',
+      subtitle: 'Chains, Branching & Networks',
+      description: 'Visualize polymer molecular architectures in 3D. Compare linear, branched, and cross-linked network behaviors under tensile stress and analyze crystallinity.',
+      image: polymerLabPreview,
+      active: true,
+      difficulty: 'Medium',
+      topic: 'Polymer Engineering'
+    },
+    {
+      id: 'tensile_lab',
+      title: 'Tensile Testing Lab',
+      subtitle: 'Stress-Strain & Necking',
+      description: 'Deform dogbone specimens under tensile load. Compare engineering vs. true stress-strain curves for steel, aluminum, cast iron, and polymers.',
+      image: tensileLabPreview,
+      active: true,
+      difficulty: 'Hard',
+      topic: 'Mechanical Metallurgy'
     }
   ];
 
